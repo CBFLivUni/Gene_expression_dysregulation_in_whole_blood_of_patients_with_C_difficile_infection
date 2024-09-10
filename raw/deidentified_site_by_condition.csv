@@ -1,0 +1,544 @@
+condition,site_code,condition_labels,site_label
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+IBD,STK,IBD,"St. Helen's and
+Knowsley Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,UHA,IBD,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,WNN,CDI,"Walton Centre for
+Neurology and
+Neurosurgery"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+IBD,STK,IBD,"St. Helen's and
+Knowsley Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+IBD,WTH,IBD,"Whiston Trust
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+IBD,UHA,IBD,"University
+Hospital
+of Aintree"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+IBD,STK,IBD,"St. Helen's and
+Knowsley Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC GDH+,WTH,GDH,"Whiston Trust
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+DC,UHA,DC,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+IBD,WTH,IBD,"Whiston Trust
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,WNN,CDI,"Walton Centre for
+Neurology and
+Neurosurgery"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+IBD,WTH,IBD,"Whiston Trust
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+DC GDH+,WTH,GDH,"Whiston Trust
+Hospital"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,WTH,IBD,"Whiston Trust
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+IBD,UHA,IBD,"University
+Hospital
+of Aintree"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,WNN,CDI,"Walton Centre for
+Neurology and
+Neurosurgery"
+IBD,WTH,IBD,"Whiston Trust
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,UHA,IBD,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+IBD,WTH,IBD,"Whiston Trust
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+CDI,STK,CDI,"St. Helen's and
+Knowsley Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC GDH+,STK,GDH,"St. Helen's and
+Knowsley Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+CDI,UHA,CDI,"University
+Hospital
+of Aintree"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+DC,STK,DC,"St. Helen's and
+Knowsley Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+IBD,UHA,IBD,"University
+Hospital
+of Aintree"
+DC GDH+,UHA,GDH,"University
+Hospital
+of Aintree"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+CDI,WTH,CDI,"Whiston Trust
+Hospital"
+DC GDH+,RLH,GDH,"Royal Liverpool
+Hospital"
+DC,RLH,DC,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
+CDI,RLH,CDI,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+IBD,RLH,IBD,"Royal Liverpool
+Hospital"
+HC,RLH,HC,"Royal Liverpool
+Hospital"
