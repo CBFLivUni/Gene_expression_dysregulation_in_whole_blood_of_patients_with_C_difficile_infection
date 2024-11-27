@@ -1,6 +1,6 @@
-R version 4.4.1 (2024-06-14)
+R version 4.4.2 (2024-10-31)
 Platform: x86_64-apple-darwin20
-Running under: macOS Sonoma 14.6.1
+Running under: macOS Sequoia 15.1
 
 Matrix products: default
 BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
@@ -13,55 +13,101 @@ time zone: Europe/London
 tzcode source: internal
 
 attached base packages:
-[1] stats4    stats     graphics  grDevices utils     datasets 
-[7] methods   base     
+[1] stats4    stats     graphics  grDevices
+[5] utils     datasets  methods   base     
 
 other attached packages:
- [1] fgsea_1.30.0        janitor_2.2.0      
- [3] gridExtra_2.3       conflicted_1.2.0   
- [5] oligo_1.68.2        Biostrings_2.72.1  
- [7] GenomeInfoDb_1.40.1 XVector_0.44.0     
- [9] IRanges_2.38.1      S4Vectors_0.42.1   
-[11] Biobase_2.64.0      oligoClasses_1.66.0
-[13] BiocGenerics_0.50.0 forcats_1.0.0      
-[15] ggrepel_0.9.6       cowplot_1.1.3      
-[17] ggplot2_3.5.1       tidytable_0.11.1   
+ [1] fgsea_1.30.0       
+ [2] janitor_2.2.0      
+ [3] gridExtra_2.3      
+ [4] conflicted_1.2.0   
+ [5] oligo_1.68.2       
+ [6] Biostrings_2.72.1  
+ [7] GenomeInfoDb_1.40.1
+ [8] XVector_0.44.0     
+ [9] IRanges_2.38.1     
+[10] S4Vectors_0.42.1   
+[11] Biobase_2.64.0     
+[12] oligoClasses_1.66.0
+[13] BiocGenerics_0.50.0
+[14] forcats_1.0.0      
+[15] ggrepel_0.9.6      
+[16] cowplot_1.1.3      
+[17] ggplot2_3.5.1      
+[18] tidytable_0.11.1   
 
 loaded via a namespace (and not attached):
- [1] tidyselect_1.2.1            farver_2.1.2               
- [3] dplyr_1.1.4                 blob_1.2.4                 
- [5] fastmap_1.2.0               timechange_0.3.0           
- [7] lifecycle_1.0.4             RSQLite_2.3.7              
- [9] magrittr_2.0.3              compiler_4.4.1             
-[11] rlang_1.1.4                 tools_4.4.1                
-[13] utf8_1.2.4                  data.table_1.16.0          
-[15] labeling_0.4.3              S4Arrays_1.4.1             
-[17] bit_4.0.5                   DelayedArray_0.30.1        
-[19] abind_1.4-5                 BiocParallel_1.38.0        
-[21] withr_3.0.1                 grid_4.4.1                 
-[23] preprocessCore_1.66.0       fansi_1.0.6                
-[25] affxparser_1.76.0           colorspace_2.1-1           
-[27] MASS_7.3-61                 scales_1.3.0               
-[29] iterators_1.0.14            SummarizedExperiment_1.34.0
-[31] cli_3.6.3                   crayon_1.5.3               
-[33] ragg_1.3.2                  generics_0.1.3             
-[35] rstudioapi_0.16.0           httr_1.4.7                 
-[37] DBI_1.2.3                   cachem_1.1.0               
-[39] stringr_1.5.1               zlibbioc_1.50.0            
-[41] splines_4.4.1               parallel_4.4.1             
-[43] BiocManager_1.30.25         matrixStats_1.4.1          
-[45] vctrs_0.6.5                 Matrix_1.7-0               
-[47] jsonlite_1.8.8              bit64_4.0.5                
-[49] systemfonts_1.1.0           foreach_1.5.2              
-[51] affyio_1.74.0               glue_1.7.0                 
-[53] codetools_0.2-20            lubridate_1.9.3            
-[55] stringi_1.8.4               gtable_0.3.5               
-[57] GenomicRanges_1.56.1        UCSC.utils_1.0.0           
-[59] munsell_0.5.1               tibble_3.2.1               
-[61] pillar_1.9.0                GenomeInfoDbData_1.2.12    
-[63] R6_2.5.1                    ff_4.0.12                  
-[65] textshaping_0.4.0           lattice_0.22-6             
-[67] memoise_2.0.1               snakecase_0.11.1           
-[69] Rcpp_1.0.13                 fastmatch_1.1-4            
-[71] svglite_2.1.3               SparseArray_1.4.8          
-[73] MatrixGenerics_1.16.0       pkgconfig_2.0.3            
+ [1] tidyselect_1.2.1           
+ [2] farver_2.1.2               
+ [3] dplyr_1.1.4                
+ [4] blob_1.2.4                 
+ [5] fastmap_1.2.0              
+ [6] timechange_0.3.0           
+ [7] lifecycle_1.0.4            
+ [8] RSQLite_2.3.7              
+ [9] magrittr_2.0.3             
+[10] compiler_4.4.2             
+[11] rlang_1.1.4                
+[12] tools_4.4.2                
+[13] utf8_1.2.4                 
+[14] data.table_1.16.2          
+[15] labeling_0.4.3             
+[16] S4Arrays_1.4.1             
+[17] bit_4.5.0                  
+[18] DelayedArray_0.30.1        
+[19] abind_1.4-8                
+[20] BiocParallel_1.38.0        
+[21] withr_3.0.2                
+[22] grid_4.4.2                 
+[23] preprocessCore_1.66.0      
+[24] fansi_1.0.6                
+[25] affxparser_1.76.0          
+[26] colorspace_2.1-1           
+[27] MASS_7.3-61                
+[28] scales_1.3.0               
+[29] iterators_1.0.14           
+[30] SummarizedExperiment_1.34.0
+[31] cli_3.6.3                  
+[32] crayon_1.5.3               
+[33] ragg_1.3.3                 
+[34] generics_0.1.3             
+[35] rstudioapi_0.17.1          
+[36] httr_1.4.7                 
+[37] DBI_1.2.3                  
+[38] cachem_1.1.0               
+[39] stringr_1.5.1              
+[40] zlibbioc_1.50.0            
+[41] splines_4.4.2              
+[42] parallel_4.4.2             
+[43] BiocManager_1.30.25        
+[44] matrixStats_1.4.1          
+[45] vctrs_0.6.5                
+[46] Matrix_1.7-1               
+[47] jsonlite_1.8.9             
+[48] bit64_4.5.2                
+[49] systemfonts_1.1.0          
+[50] foreach_1.5.2              
+[51] affyio_1.74.0              
+[52] glue_1.8.0                 
+[53] codetools_0.2-20           
+[54] lubridate_1.9.3            
+[55] stringi_1.8.4              
+[56] gtable_0.3.6               
+[57] GenomicRanges_1.56.2       
+[58] UCSC.utils_1.0.0           
+[59] munsell_0.5.1              
+[60] tibble_3.2.1               
+[61] pillar_1.9.0               
+[62] GenomeInfoDbData_1.2.12    
+[63] R6_2.5.1                   
+[64] ff_4.5.0                   
+[65] textshaping_0.4.0          
+[66] lattice_0.22-6             
+[67] memoise_2.0.1              
+[68] snakecase_0.11.1           
+[69] Rcpp_1.0.13-1              
+[70] fastmatch_1.1-4            
+[71] svglite_2.1.3              
+[72] SparseArray_1.4.8          
+[73] MatrixGenerics_1.16.0      
+[74] pkgconfig_2.0.3            

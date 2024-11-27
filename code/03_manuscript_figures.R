@@ -49,6 +49,144 @@ theme_bw_black <- function(base_size = 14,
 }
 
 ## Figure 2 ####
+### Import data ####
+# Import prcomp object from RMA-normalised data filtered to Entrez genes
+pca_rma_genes <- readRDS("processed/pca_rma_entrez.RDS")
+
+# Microarray expressionSet
+eset <- readRDS("processed/RMAExpressionSet.RDS")
+eset$condition <- factor(eset$condition,
+                         levels = c("CDI", "GDH", "IBD", "DC", "HC"))
+
+# Import microarray batch metadata
+batch_meta <- fread("raw/metadata_batch.csv")
+
+# Map letter designations to each batch to save plot space
+letter_mapping <- setNames(LETTERS[1:8], unique(batch_meta$batch_date))
+batch_meta$batch_id <- letter_mapping[match(batch_meta$batch_date,
+                                         unique(batch_meta$batch_date))]
+rm(letter_mapping)
+
+# Check that eset sample is in the same order as batch_meta, should return TRUE
+identical(eset$`Sample name`, batch_meta$`Sample name`)
+
+eset$batch <- batch_meta$batch_id
+
+# Create new condition labels and reorder
+eset$condition_labels <- if_else(eset$condition == "DC GDH+",
+                                 "GDH", eset$condition)
+eset$condition_labels <- factor(eset$condition_labels,
+                                levels = c("CDI", "GDH", "IBD",  "DC", "HC"))
+### Plotting functions ####
+# Function to return PC values for plotting
+pca_df <-
+  function(pca_obj, metadata, group, pc = c(1L, 2L),
+           pca_object = FALSE,
+           large_palette = FALSE, id = FALSE,
+           discrete = TRUE) {
+    
+    # Check all required inputs are present
+    if (missing(pca_obj)) {
+      stop("PCA object must be supplied")
+    }
+    if (missing(metadata)) {
+      stop("Metadata must be supplied")
+    }
+    if (missing(group)) {
+      stop("Group must be defined")
+    }
+    
+    # Function to detect whole numbers, from examples in ?is.integer
+    is.wholenumber <-
+      function(x, tol = .Machine$double.eps^0.5)  abs(x - round(x)) < tol
+    
+    # Check that PCs to plot are integers
+    if (any(!is.wholenumber(as.numeric((pc))))) {
+      stop("PCs to be plotted must be numeric integers")
+    }
+    
+    # Define objects and metadata
+    metadat <- Biobase::pData(metadata)
+    grp <- metadat[, group]
+    
+    
+    # Define principal components to be plotted
+    pca_raw <- pca_obj
+    selected_pc1 <- as.integer(pc[1])
+    selected_pc2 <- as.integer(pc[2])
+    
+    if (pca_object == FALSE) {
+      pc1 <-  pca_raw$x[, selected_pc1]
+      pc2 <-  pca_raw$x[, selected_pc2]
+    } else {
+      # For objects of class 'PCA'
+      pc1 <- pca_raw[["rotated"]][, selected_pc1]
+      pc2 <- pca_raw[["rotated"]][, selected_pc2]
+    }
+    
+    # If ID columns to add to exported data are required
+    if (any(id != FALSE)) {
+      id_label <- metadat[, id]
+    } else {
+      id_label <- NA_character_
+    }
+    
+    # Prepare data.frame to plot
+    if (discrete) {
+      data_gg <- data.frame(pc1 = pc1,
+                            pc2 = pc2,
+                            grp = as.factor(grp))
+    } else {
+      data_gg <- data.frame(pc1 = pc1,
+                            pc2 = pc2,
+                            grp = grp)
+    }
+    
+    # Add ID columns
+    data_gg <- cbind.data.frame(data_gg, id_label)
+    
+    # Extract PCA values for plot axis labels
+    percent_var <-
+      round(100 * pca_raw$sdev ^ 2 / sum(pca_raw$sdev ^ 2), 1)
+    
+    data_gg <- cbind.data.frame(data_gg,
+                                "selected_pc1_var" = percent_var[selected_pc1],
+                                "selected_pc2_var" = percent_var[selected_pc2])
+    
+    return(data_gg)
+  }
+
+# Format data for PC scatterplot
+pca_dat_genes_cond <- pca_df(pca_rma_genes, eset, "condition_labels",
+                             pca_object = FALSE)
+
+# Scatterplot of PC1 vs. PC2 from gene-level data, coloured by condition
+scttr_pca_all_genes_condition <- pca_dat_genes_cond |>
+  ggplot(aes(pc1, pc2)) +
+  geom_point(aes(fill = grp),
+             shape = 21, colour = "black",
+             alpha = 0.8) +
+  stat_ellipse(aes(colour = grp),
+               alpha = 0.5) +
+  xlab(paste0("PC1 (Variance explained: ",
+              max(pca_dat_genes_cond$selected_pc1_var), "%)")) +
+  ylab(paste0("PC2 (Variance explained: ",
+              max(pca_dat_genes_cond$selected_pc2_var), "%)")) +
+  scale_fill_manual(values = okabe_ito) +
+  scale_colour_manual(values = okabe_ito) +
+  theme_bw_black(base_size = 12) +
+  theme(plot.title = element_text(hjust = 0.5),
+        legend.position = "top") +
+  labs(fill = NULL) +
+  guides(colour = "none")
+
+# Save plot
+save_plot("output/figures/pca_scatterplot_by_condition.svg",
+          scttr_pca_all_genes_condition,
+          base_asp = 1,
+          ncol = 1)
+
+## Figure 3 ####
 ### Volcano plot functions ####
 # Volcano plot function
 volcano <- function(df, top20 = NULL) {
@@ -207,7 +345,7 @@ save_plot("output/figures/volcano_dc_vs_hc.pdf",
           ncol = 1,
           device = cairo_pdf)
 
-## Figure 3b ####
+## Figure 5b ####
 # GSEA of pooled t-statistics from all disease groups vs. healthy controls,
 # compare against the Reactome database
 ### Data wrangling ####
@@ -269,7 +407,7 @@ ggsave("output/figures/fgsea_reactome_diarrhoea-common_hc_top-20.pdf",
   units = "mm"
 )
 
-## Figure 4 ####
+## Figure 7 ####
 ### CDI vs. IBD ####
 # Import data
 tbl_cdi_ibd_bsln <- fread("output/tables/de_stats_cdi_vs_ibd.csv")
@@ -349,7 +487,7 @@ save_plot("output/figures/volcano_cdi_vs_dc.pdf",
           device = cairo_pdf)
 
 
-## Figure 6a ####
+## Figure 8a ####
 # Heatmap of z-scores from Ingenuity Pathway Analysis
 # Import IPA z-scores
 ipa_z <- fread("raw/Z-scores_CDIcomparison_canonical pathways.txt",
@@ -654,100 +792,14 @@ save_plot("output/figures/gdh_neg_cdt_neg_ribotype_bar_chart.pdf",
           base_asp = 2,
           ncol = 1)
 
-## Supplementary Figure 6 ####
-### Import data ####
-# Import prcomp object from RMA-normalised data filtered to Entrez genes
-pca_rma_genes <- readRDS("processed/pca_rma_entrez.RDS")
-
-# Microarray expressionSet
-eset <- readRDS("processed/RMAExpressionSet.RDS")
-eset$condition <- factor(eset$condition,
-                         levels = c("CDI", "GDH", "IBD", "DC", "HC"))
-
-
-# Create new condition labels and reorder
-eset$condition_labels <- if_else(eset$condition == "DC GDH+",
-                                 "GDH", eset$condition)
-eset$condition_labels <- factor(eset$condition_labels,
-                             levels = c("CDI", "GDH", "IBD",  "DC", "HC"))
-### Plotting functions ####
-# Function to return PC values for plotting
-pca_df <-
-  function(pca_obj, metadata, group, pc = c(1L, 2L),
-           pca_object = FALSE,
-           large_palette = FALSE, id = FALSE,
-           discrete = TRUE) {
-    
-    # Check all required inputs are present
-    if (missing(pca_obj)) {
-      stop("PCA object must be supplied")
-    }
-    if (missing(metadata)) {
-      stop("Metadata must be supplied")
-    }
-    if (missing(group)) {
-      stop("Group must be defined")
-    }
-    
-    # Function to detect whole numbers, from examples in ?is.integer
-    is.wholenumber <-
-      function(x, tol = .Machine$double.eps^0.5)  abs(x - round(x)) < tol
-    
-    # Check that PCs to plot are integers
-    if (any(!is.wholenumber(as.numeric((pc))))) {
-      stop("PCs to be plotted must be numeric integers")
-    }
-    
-    # Define objects and metadata
-    metadat <- Biobase::pData(metadata)
-        grp <- metadat[, group]
-    
-        
-    # Define principal components to be plotted
-    pca_raw <- pca_obj
-    selected_pc1 <- as.integer(pc[1])
-    selected_pc2 <- as.integer(pc[2])
-    
-    if (pca_object == FALSE) {
-    pc1 <-  pca_raw$x[, selected_pc1]
-    pc2 <-  pca_raw$x[, selected_pc2]
-    } else {
-      # For objects of class 'PCA'
-      pc1 <- pca_raw[["rotated"]][, selected_pc1]
-      pc2 <- pca_raw[["rotated"]][, selected_pc2]
-    }
-    
-    # If ID columns to add to exported data are required
-    if (any(id != FALSE)) {
-      id_label <- metadat[, id]
-    } else {
-      id_label <- NA_character_
-    }
-    
-    # Prepare data.frame to plot
-    data_gg <- data.frame(pc1 = pc1,
-                          pc2 = pc2,
-                          grp = grp)
-    # Add ID columns
-    data_gg <- cbind.data.frame(data_gg, id_label)
-    
-    # Extract PCA values for plot axis labels
-    percent_var <-
-      round(100 * pca_raw$sdev ^ 2 / sum(pca_raw$sdev ^ 2), 1)
-    
-    data_gg <- cbind.data.frame(data_gg,
-                                "selected_pc1_var" = percent_var[selected_pc1],
-                                "selected_pc2_var" = percent_var[selected_pc2])
-    
-    return(data_gg)
-  }
-
+## Supplementary Figure 7 ####
+# Scatterplot of PC1 vs. PC2, coloured by microarray batch
 # Format data for PC scatterplot
-pca_dat_genes_cond <- pca_df(pca_rma_genes, eset, "condition_labels",
-                             pca_object = FALSE)
+pca_dat_genes_batch <- pca_df(pca_rma_genes, eset, "batch",
+                              pc = c(1, 2),
+                              pca_object = FALSE)
 
-# Scatterplot of PC1 vs. PC2 from gene-level data, coloured by condition
-scttr_pca_all_genes <- pca_dat_genes_cond |>
+scttr_pca_all_genes_batch <- pca_dat_genes_batch |>
   ggplot(aes(pc1, pc2)) +
   geom_point(aes(fill = grp),
              shape = 21, colour = "black",
@@ -755,20 +807,21 @@ scttr_pca_all_genes <- pca_dat_genes_cond |>
   stat_ellipse(aes(colour = grp),
                alpha = 0.5) +
   xlab(paste0("PC1 (Variance explained: ",
-              max(pca_dat_genes_cond$selected_pc1_var), "%)")) +
+              max(pca_dat_genes_batch$selected_pc1_var), "%)")) +
   ylab(paste0("PC2 (Variance explained: ",
-              max(pca_dat_genes_cond$selected_pc2_var), "%)")) +
+              max(pca_dat_genes_batch$selected_pc2_var), "%)")) +
   scale_fill_manual(values = okabe_ito) +
   scale_colour_manual(values = okabe_ito) +
   theme_bw_black(base_size = 12) +
   theme(plot.title = element_text(hjust = 0.5),
         legend.position = "top") +
-  labs(fill = NULL) +
-  guides(colour = "none")
+  labs(fill = "Batch") +
+  guides(colour = "none",
+         fill = guide_legend(nrow = 1))
 
 # Save plot
-save_plot("output/figures/pca_scatterplot_by_condition.svg",
-          scttr_pca_all_genes,
+save_plot("output/figures/pca_scatterplot_by_batch.svg",
+          scttr_pca_all_genes_batch,
           base_asp = 1,
           ncol = 1)
 
