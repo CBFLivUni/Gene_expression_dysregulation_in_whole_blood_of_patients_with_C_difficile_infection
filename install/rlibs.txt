@@ -1,3 +1,5 @@
+AnnotationDbi
+archive
 Biobase
 clariomdhumantranscriptcluster.db
 dplyr
@@ -22,3 +24,4 @@ oligo
 scales
 tidytable
 BiocManager
+GEOquery

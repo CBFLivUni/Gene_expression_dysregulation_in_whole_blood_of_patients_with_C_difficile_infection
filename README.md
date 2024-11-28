@@ -1,6 +1,6 @@
 ## Overview
 
-This repository reproduces the R analyses from Tsakiroglou et al.
+This repository reproduces the R analyses from [Tsakiroglou et al. 2024](https://doi.org/10.3390/ijms252312653).
 
 ## Installation
 
@@ -10,9 +10,9 @@ The package versions used for the manuscript analyses can be found within `outpu
 
 ## Directions
 
-Scripts to run the analyses from the manuscript can be found in `code`. Outputs from each analysis are already included in this repository, so each script can be run as a standalone analysis.
+Scripts to run the analyses from the manuscript can be found in the `code` folder. Outputs from each analysis are already included in this repository, so each script can be run as a standalone analysis.
 
-To reproduce the analysis from scratch using the data files in `raw`, each script should be run in the order they are numbered. Raw CEL files can be obtained from Gene Expression Omnibus (GEO) accession no. GSE276395 and should be saved in `raw/GSE276395_RAW`.
+To reproduce the analysis from scratch using the data files in `raw`, each script should be run in the order they are numbered. Raw CEL files can be obtained manually from Gene Expression Omnibus (GEO) accession no. GSE276395 and saved in `raw/GSE276395_RAW`, or automatically using the R script `code/01_process_cel.R`.
 
 [![CC BY 4.0][cc-by-shield]][cc-by]
 

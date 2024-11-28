@@ -3,8 +3,26 @@ library(tidytable)
 library(oligo)
 library(stringr)
 library(clariomdhumantranscriptcluster.db)
+library(GEOquery)
+library(archive)
 
 ## Import data ####
+### Download CEL files from GEO ####
+# The following options may need to be set for this to work:
+#options(timeout = max(300, getOption("timeout")))
+#options(download.file.method.GEOquery = "wget")
+
+# Or on Windows:
+#options(timeout = max(300, getOption("timeout")))
+#options(download.file.method.GEOquery = "wininet")
+
+cel <- getGEOSuppFiles("GSE276395", baseDir = "raw")
+archive_extract("raw/GSE276395/GSE276395_RAW.tar",
+                dir = "raw/GSE276395_RAW")
+rm(cel)
+# Optional: delete TAR archive
+#unlink("raw/GSE276395", recursive = TRUE)
+
 ### Metadata ####
 meta <- fread("raw/metadata.csv")
 colnames(meta) <- gsub("characteristics: ", "", colnames(meta))
